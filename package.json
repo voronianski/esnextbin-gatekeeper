@@ -1,0 +1,22 @@
+{
+  "name": "esnextbin-gatekeeper",
+  "version": "1.0.0",
+  "description": "Service that deals with github auth for https://esnextb.in",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/voronianski/esnextbin-gatekeeper"
+  },
+  "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "micro": "^8.0.2",
+    "micro-cors": "0.0.4",
+    "microrouter": "^2.2.2",
+    "superagent": "^3.5.2"
+  }
+}
