@@ -4,7 +4,7 @@ const { router, get } = require('microrouter');
 const request = require('superagent');
 const { send } = micro;
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 9393;
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 
