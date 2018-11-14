@@ -2,11 +2,12 @@ const micro = require('micro');
 const cors = require('micro-cors')();
 const { router, get } = require('microrouter');
 const request = require('superagent');
-const { send } = micro;
 
 const PORT = process.env.PORT || 9393;
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
+
+const { send } = micro;
 
 const ping = (req, res) => 'pong ^.^';
 const token = async (req, res) => {
@@ -25,7 +26,7 @@ const token = async (req, res) => {
         code
       });
 
-    send(res, 200, res.body.access_token);
+    send(res, 200, {token: githubRes.body.access_token});
   } catch (err) {
     send(res, 500, {error: 'github login failed'});
   }
@@ -38,5 +39,5 @@ const routes = router(
 const server = micro(cors(routes));
 
 server.listen(PORT, () => {
-  console.log(`esnextbin-gatekeeper started on http://localhost:${PORT}`);
+  console.log(`esnextb.in-gatekeeper started on http://localhost:${PORT}`);
 });
